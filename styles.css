@@ -1,53 +1,105 @@
-body{
-    color: white;
-    display: flex;
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;       /* ¡La clave está aquí! */
-    margin: 0;
+/* Reset básico para asegurar que los bordes y padding no rompan el ancho */
+* {
+    box-sizing: border-box;
 }
 
-.contenido-principal{
+body {
+    color: white;
+    background-color: black; /* Fondo negro en el body para evitar bordes blancos al hacer scroll */
+    margin: 0;
+    font-family: sans-serif; /* Agregado para mejor legibilidad */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido-principal {
     display: flex;
     flex-direction: column;
-    background-color: black;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
+    width: 100%;
+    min-height: 100vh; /* Asegura que cubra toda la pantalla */
+    padding: 20px; /* Margen interno para que no toque los bordes del celular */
+    text-align: center;
 }
 
-input{
-    padding: 0 10px;
-    font-size: 20px;
+/* Título responsivo */
+h1 {
+    color: white;
+    font-size: 12vw; /* El tamaño se adapta al ancho de la pantalla */
+    margin-bottom: 30px;
+    line-height: 1.1;
+}
+
+/* Contenedor del formulario flexible */
+#myForm {
+    display: flex;
+    width: 100%;
+    max-width: 500px; /* No se hará más ancho que esto en PC */
+    gap: 10px; /* Espacio entre el input y el botón */
+}
+
+input {
+    padding: 0 15px;
+    font-size: 18px; /* Tamaño legible en móvil (evita zoom automático en iOS) */
     height: 52px;
-    width: 400px;
+    border: none;
+    border-radius: 5px; /* Estética opcional */
+    
+    /* MAGIA RESPONSIVE: */
+    width: 100%; /* Ocupa todo el espacio posible... */
+    flex: 1;     /* ...dentro del flex container */
+    min-width: 0; /* Evita desbordes en flexbox */
 }
 
 input::placeholder {
-    font-size: 20px;
+    font-size: 16px; /* Un poco más chico para que quepa en móviles */
     color: #888;
-    font-style: italic; 
+    font-style: italic;
 }
 
-button{
+button {
     height: 52px;
     width: 52px;
-}
-
-h1{
-    color:white;
-    font-size: 64px;
-}
-
-#resultado{
+    font-size: 14px; /* Ajuste para que entre el texto si es necesario */
+    border: none;
+    cursor: pointer;
+    background-color: rgb(0, 169, 221); /* Color a juego con el footer */
     color: white;
-    font-size: 32px;
+    border-radius: 5px;
+    flex-shrink: 0; /* Evita que el botón se aplaste */
 }
 
-#footer{
+#resultado {
+    color: white;
+    font-size: 24px;
+    margin-top: 20px;
+    word-wrap: break-word; /* Si el resultado es muy largo, baja de línea */
+}
+
+footer {
+    margin-top: auto; /* Empuja el footer hacia abajo si sobra espacio */
+    padding-top: 40px;
+}
+
+#footer {
     color: rgb(0, 169, 221);
     font-size: 12px;
+}
+
+/* MEDIA QUERY: Reglas específicas para pantallas de escritorio */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 64px; /* Tamaño fijo solo en pantallas grandes */
+    }
+    
+    input {
+        font-size: 20px;
+    }
+    
+    input::placeholder {
+        font-size: 20px;
+    }
 }
