@@ -1,0 +1,53 @@
+body{
+    color: white;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;       /* ¡La clave está aquí! */
+    margin: 0;
+}
+
+.contenido-principal{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+input{
+    padding: 0 10px;
+    font-size: 20px;
+    height: 52px;
+    width: 400px;
+}
+
+input::placeholder {
+    font-size: 20px;
+    color: #888;
+    font-style: italic; 
+}
+
+button{
+    height: 52px;
+    width: 52px;
+}
+
+h1{
+    color:white;
+    font-size: 64px;
+}
+
+#resultado{
+    color: white;
+    font-size: 32px;
+}
+
+#footer{
+    color: rgb(0, 169, 221);
+    font-size: 12px;
+}
