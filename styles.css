@@ -21,7 +21,7 @@ body {
     align-items: center;
     width: 100%;
     min-height: 100vh; /* Asegura que cubra toda la pantalla */
-    padding: 150px; /* Margen interno para que no toque los bordes del celular */
+    padding: 150px 20px; /* Margen interno para que no toque los bordes del celular */
     text-align: center;
 }
 
